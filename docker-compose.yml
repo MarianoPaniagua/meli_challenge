@@ -1,0 +1,24 @@
+version: "3"
+services:
+  meli_mongodb:
+    image: mongo:latest
+    container_name: meli_mongodb_container
+    ports:
+      - 27017:27017
+  meliactivemq:
+    image: rmohr/activemq:5.15.9-alpine
+    container_name: meeli_activemq_container
+    ports:
+      - 61616:61616
+      - 8161:8161
+      - 5672:5672
+  meli_springboot_app:
+    build:
+      context: .
+      dockerfile: config/Dockerfile
+    image: meli_challenge_image:latest
+    container_name: meli_challenge_mongo_container
+    ports:
+      - 8080:8080
+    links:
+      - meli_mongodb

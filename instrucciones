@@ -1,0 +1,12 @@
+Necesitamos Maven y Docker
+
+En raíz ejecutar "mvn install" y luego "docker-compose up" para levantar los containers.
+
+Para obtener información del país según direeción IP utilizar el siguiente endpoint
+http://localhost:8080/server/rest/geoinfo/40.107.225.0  (Argentina)
+http://localhost:8080/server/rest/geoinfo/40.107.225.0  (Korea)
+
+Para obtener información sobre los accesos mas lejanos, cercanos y promedio
+http://localhost:8080/server/rest/access/CERCANO
+http://localhost:8080/server/rest/access/LEJANO
+http://localhost:8080/server/rest/access/PROMEDIO
